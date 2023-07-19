@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import styles from "./App.module.scss";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Main from "./components/Main";
@@ -11,7 +11,9 @@ function App() {
       <Header>
         <Nav />
       </Header>
-      <Main>main</Main>
+      <Main>
+        <div className={styles.title}>Little Lemon</div>
+      </Main>
       <Footer></Footer>
     </>
   );
