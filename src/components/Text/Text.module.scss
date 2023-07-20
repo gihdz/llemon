@@ -1,0 +1,13 @@
+@import '/src/styles/mixins';
+.displayTitle {
+  @include display-title
+}
+.subTitle {
+  @include sub-title
+}
+.ctaLead {
+  @include cta-lead
+}
+.regular {
+  @include regular
+}

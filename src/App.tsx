@@ -1,16 +1,13 @@
 import React from "react";
 import styles from "./App.module.scss";
 import Footer from "./components/Footer";
-import Header from "./components/Header";
+import Header from "./components/Header/Header";
 import Main from "./components/Main";
-import Nav from "./components/Nav";
 
 function App() {
   return (
     <>
-      <Header>
-        <Nav />
-      </Header>
+      <Header />
       <Main>
         <div className={styles.title}>Little Lemon</div>
       </Main>
