@@ -3,23 +3,18 @@ import classNames from "classnames";
 import styles from "./Text.module.scss";
 
 type TextSizeType = "regular" | "title" | "subTitle" | "cta";
+type TextColorType = "default" | "light" | "primary1" | "primary2";
 interface Props {
   size?: TextSizeType;
+  color?: TextColorType;
 }
 
-const textSizeStyles: Record<TextSizeType, string> = {
-  regular: styles.regular,
-  title: styles.displayTitle,
-  subTitle: styles.subTitle,
-  cta: styles.ctaLead,
-};
-const Text = ({ children, size }: PropsWithChildren<Props>) => {
-  const textSizeStyle = textSizeStyles[size];
-  return <div className={classNames(textSizeStyle)}>{children}</div>;
-};
-
-Text.defaultProps = {
-  size: "regular",
+const Text = ({ children, size, color }: PropsWithChildren<Props>) => {
+  const textSizeStyle = styles[size || "regular"];
+  const textColorStyle = styles[color || "default"];
+  return (
+    <div className={classNames(textSizeStyle, textColorStyle)}>{children}</div>
+  );
 };
 
 export default Text;

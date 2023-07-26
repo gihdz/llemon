@@ -1,7 +1,7 @@
 import React from "react";
-import { ReactComponent as LemonLogo } from "../../images/Logo.svg";
+import { ReactComponent as LemonLogo } from "images/Logo.svg";
 import styles from "./Header.module.scss";
-import Text from "../Text/Text";
+import Text from "components/Text/Text";
 
 const Header = () => {
   return (

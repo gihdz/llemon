@@ -1,17 +1,17 @@
 import React from "react";
-import styles from "./App.module.scss";
-import Footer from "./components/Footer";
-import Header from "./components/Header/Header";
-import Main from "./components/Main";
+import Hero from "components/Hero/Hero";
+import Main from "components/Main";
+import Footer from "components/Footer";
+import Header from "components/Header/Header";
 
 function App() {
   return (
     <>
       <Header />
+      <Hero />
       <Main>
-        <div className={styles.title}>Little Lemon</div>
+        <Footer />
       </Main>
-      <Footer></Footer>
     </>
   );
 }

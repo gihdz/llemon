@@ -1,0 +1,4 @@
+root = true
+
+[{*.ats,*.cts,*.mts,*.ts,*.tsx}]
+ij_typescript_import_prefer_absolute_path = true

@@ -1,0 +1,16 @@
+@import "/src/styles/variables";
+@import "/src/styles/mixins";
+.button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    @include cta-lead
+}
+
+.primary1 {
+    background-color: $primary1;
+}
+.primary2 {
+    background-color: $primary2;
+}

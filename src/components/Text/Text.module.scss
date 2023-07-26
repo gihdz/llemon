@@ -1,13 +1,28 @@
 @import '/src/styles/mixins';
-.displayTitle {
+@import '/src/styles/variables';
+
+.title {
   @include display-title
 }
 .subTitle {
   @include sub-title
 }
-.ctaLead {
+.cta {
   @include cta-lead
 }
 .regular {
   @include regular
+}
+
+.default {
+  color: #000;
+}
+.light {
+  color: #FFF;
+}
+.primary1 {
+  color: $primary1;
+}
+.primary2 {
+  color: $primary2;
 }
