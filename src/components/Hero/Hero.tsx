@@ -8,15 +8,15 @@ const HomepageHero = () => {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <Text size="title" color="primary2">
+        <Text size="64" color="primary2">
           Little Lemon
         </Text>
-        <Text size="subTitle" color="light">
+        <Text size="40" color="light">
           DR
         </Text>
 
         <div className={styles.subTitleContainer}>
-          <Text size="cta" color="light">
+          <Text size="16" color="light">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </Text>

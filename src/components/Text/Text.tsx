@@ -2,18 +2,53 @@ import React, { PropsWithChildren } from "react";
 import classNames from "classnames";
 import styles from "./Text.module.scss";
 
-type TextSizeType = "regular" | "title" | "subTitle" | "cta";
-type TextColorType = "default" | "light" | "primary1" | "primary2";
+type TextSizeType = "12" | "14" | "16" | "20" | "28" | "36" | "40" | "64";
+type TextColorType =
+  | "default"
+  | "light"
+  | "primary1"
+  | "primary2"
+  | "secondary1"
+  | "secondary2"
+  | "secondary3"
+  | "secondary4";
+type TextFontWeight = "regular" | "medium" | "bold";
 interface Props {
   size?: TextSizeType;
   color?: TextColorType;
+  // Weight won't apply for 48 and 60 text sizes
+  weight?: TextFontWeight;
 }
 
-const Text = ({ children, size, color }: PropsWithChildren<Props>) => {
-  const textSizeStyle = styles[size || "regular"];
+const getFontSizeKey = (size?: TextSizeType) => {
+  if (size === "64") return "title";
+  if (size === "40") return "subTitle";
+  return `fontSize${size || "14"}`;
+};
+const getFontWeightKey = (weight?: TextFontWeight, size?: TextSizeType) => {
+  if (size === "64" || size === "40") return "";
+  const weightCssValueMap: Record<TextFontWeight, string> = {
+    regular: "400",
+    medium: "500",
+    bold: "700",
+  };
+  return `fontWeight${weight ? weightCssValueMap[weight] : "400"}`;
+};
+const Text = ({ children, size, color, weight }: PropsWithChildren<Props>) => {
+  const textSizeStyle = styles[getFontSizeKey(size)];
+  const textFontWeightStyle = styles[getFontWeightKey(weight, size)];
   const textColorStyle = styles[color || "default"];
   return (
-    <div className={classNames(textSizeStyle, textColorStyle)}>{children}</div>
+    <div
+      className={classNames(
+        styles.container,
+        textSizeStyle,
+        textColorStyle,
+        textFontWeightStyle,
+      )}
+    >
+      {children}
+    </div>
   );
 };
 

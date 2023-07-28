@@ -13,27 +13,27 @@ const Header = () => {
         <ul className={styles.navLinksContainer}>
           <li>
             <a href="/">
-              <Text size="cta">Home</Text>
+              <Text size="20">Home</Text>
             </a>
           </li>
           <li>
             <a href="/">
-              <Text size="cta">About</Text>
+              <Text size="20">About</Text>
             </a>
           </li>
           <li>
             <a href="/">
-              <Text size="cta">Reservations</Text>
+              <Text size="20">Reservations</Text>
             </a>
           </li>
           <li>
             <a href="/">
-              <Text size="cta">Order Online</Text>
+              <Text size="20">Order Online</Text>
             </a>
           </li>
           <li>
             <a href="/">
-              <Text size="cta">Login</Text>
+              <Text size="20">Login</Text>
             </a>
           </li>
         </ul>

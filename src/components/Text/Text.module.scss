@@ -1,17 +1,35 @@
-@import '/src/styles/mixins';
-@import '/src/styles/variables';
+@import 'styles/variables';
+
+.container {
+  font-family: 'Karla', sans-serif;
+  font-weight: 400;
+}
 
 .title {
-  @include display-title
+  font-family: 'Markazi Text', serif;
+  font-weight: $markazi-font-medium;
+  font-size: 64px;
 }
 .subTitle {
-  @include sub-title
+  font-family: 'Markazi Text', serif;
+  font-weight: $markazi-font-regular;
+  font-size: 40px;
 }
-.cta {
-  @include cta-lead
+
+$fontSizes: 12, 14, 16, 20, 28, 36;
+
+@each $size in $fontSizes {
+  $fontSizeValue: #{$size} + "px";
+  .fontSize#{$size} {
+    font-size: $fontSizeValue;
+  }
 }
-.regular {
-  @include regular
+
+$karlaFontWeights: 200, 300, 400, 500, 600, 700, 800;
+@each $weight in $karlaFontWeights {
+  .fontWeight#{$weight} {
+    font-weight: $weight;
+  } 
 }
 
 .default {
@@ -25,4 +43,16 @@
 }
 .primary2 {
   color: $primary2;
+}
+.secondary1 {
+  color: $secondary1;
+}
+.secondary2 {
+  color: $secondary2;
+}
+.secondary3 {
+  color: $secondary3;
+}
+.secondary4 {
+  color: $secondary4;
 }
