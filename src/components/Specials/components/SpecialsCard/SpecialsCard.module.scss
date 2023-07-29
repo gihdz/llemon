@@ -1,0 +1,41 @@
+@import "styles/variables";
+.container {
+  max-width: 265px;
+  width: 100%;
+}
+.imageWrapper {
+  background-color: lightgrey;
+  height: 185px;
+  border-radius: 12px 12px 0 0;
+}
+.topContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bodyContent {
+  background-color: $secondary3;
+  padding: 20px;
+  height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.orderDeliveryContainer {
+  display: flex;
+  align-items: center;
+  gap:10px;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px 12px 0 0;
+}
+
+
+.titleAndDescriptionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
