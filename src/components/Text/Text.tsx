@@ -2,7 +2,7 @@ import React, { PropsWithChildren } from "react";
 import classNames from "classnames";
 import styles from "./Text.module.scss";
 
-type TextSizeType = "12" | "14" | "16" | "20" | "28" | "36" | "40" | "64";
+type TextSizeType = 12 | 14 | 16 | 20 | 28 | 36 | 40 | 64;
 type TextColorType =
   | "default"
   | "light"
@@ -21,12 +21,12 @@ interface Props {
 }
 
 const getFontSizeKey = (size?: TextSizeType) => {
-  if (size === "64") return "title";
-  if (size === "40") return "subTitle";
-  return `fontSize${size || "14"}`;
+  if (size === 64) return "title";
+  if (size === 40) return "subTitle";
+  return `fontSize${size || 14}`;
 };
 const getFontWeightKey = (weight?: TextFontWeight, size?: TextSizeType) => {
-  if (size === "64" || size === "40") return "";
+  if (size === 64 || size === 40) return "";
   const weightCssValueMap: Record<TextFontWeight, string> = {
     regular: "400",
     medium: "500",

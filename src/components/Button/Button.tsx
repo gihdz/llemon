@@ -11,7 +11,7 @@ const Button = ({ text, color }: Props) => {
   const bgColorStyle = styles[color || "primary2"];
   return (
     <button type="button" className={classNames(styles.button, bgColorStyle)}>
-      <Text size="16" weight="medium">
+      <Text size={16} weight="medium">
         {text}
       </Text>
     </button>
