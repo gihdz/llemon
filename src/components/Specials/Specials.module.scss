@@ -2,12 +2,14 @@
   max-width: 858px;
   width: 100%;
   margin: auto;
+  padding-bottom: 80px;
 }
 
 .cardsContainer {
   display: flex;
   gap: 30px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .ctaContainer {

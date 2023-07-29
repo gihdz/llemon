@@ -18,6 +18,7 @@ interface Props {
   color?: TextColorType;
   // Weight won't apply for 48 and 60 text sizes
   weight?: TextFontWeight;
+  align?: "start" | "end" | "center";
 }
 
 const getFontSizeKey = (size?: TextSizeType) => {
@@ -34,10 +35,17 @@ const getFontWeightKey = (weight?: TextFontWeight, size?: TextSizeType) => {
   };
   return `fontWeight${weight ? weightCssValueMap[weight] : "400"}`;
 };
-const Text = ({ children, size, color, weight }: PropsWithChildren<Props>) => {
+const Text = ({
+  children,
+  size,
+  color,
+  weight,
+  align,
+}: PropsWithChildren<Props>) => {
   const textSizeStyle = styles[getFontSizeKey(size)];
   const textFontWeightStyle = styles[getFontWeightKey(weight, size)];
   const textColorStyle = styles[color || "default"];
+  const alignStyle = styles[align ? `${align}Align` : "startAlign"];
   return (
     <div
       className={classNames(
@@ -45,6 +53,7 @@ const Text = ({ children, size, color, weight }: PropsWithChildren<Props>) => {
         textSizeStyle,
         textColorStyle,
         textFontWeightStyle,
+        alignStyle,
       )}
     >
       {children}

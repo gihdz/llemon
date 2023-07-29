@@ -1,19 +1,31 @@
-@import 'styles/variables';
+@import "styles/variables";
 
 .container {
-  font-family: 'Karla', sans-serif;
+  font-family: "Karla", sans-serif;
   font-weight: 400;
 }
 
 .title {
-  font-family: 'Markazi Text', serif;
+  font-family: "Markazi Text", serif;
   font-weight: $markazi-font-medium;
   font-size: 64px;
 }
 .subTitle {
-  font-family: 'Markazi Text', serif;
+  font-family: "Markazi Text", serif;
   font-weight: $markazi-font-regular;
   font-size: 40px;
+}
+
+.startAlign {
+  text-align: start;
+}
+
+.endAlign {
+  text-align: start;
+}
+
+.centerAlign {
+  text-align: center;
 }
 
 $fontSizes: 12, 14, 16, 20, 28, 36;
@@ -29,14 +41,14 @@ $karlaFontWeights: 200, 300, 400, 500, 600, 700, 800;
 @each $weight in $karlaFontWeights {
   .fontWeight#{$weight} {
     font-weight: $weight;
-  } 
+  }
 }
 
 .default {
   color: #000;
 }
 .light {
-  color: #FFF;
+  color: #fff;
 }
 .primary1 {
   color: $primary1;

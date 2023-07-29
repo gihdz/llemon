@@ -4,6 +4,7 @@ import Main from "components/Main";
 // import Footer from "components/Footer";
 import Header from "components/Header/Header";
 import Specials from "components/Specials/Specials";
+import Testimonials from "components/Homepage/Testimonials/Testimonials";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Main>
         <Hero />
         <Specials />
+        <Testimonials />
         {/*<Footer />*/}
       </Main>
     </>
