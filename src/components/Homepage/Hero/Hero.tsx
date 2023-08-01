@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./HomepageHero.module.scss";
+import styles from "components/Homepage/Hero/HomepageHero.module.scss";
 import RestaurantFoodImg from "images/restauranfood.jpg";
 import Button from "components/Button/Button";
 import Text from "components/Text/Text";

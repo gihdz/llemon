@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./SpecialsCard.module.scss";
+import styles from "components/Homepage/Specials/components/SpecialsCard/SpecialsCard.module.scss";
 import Text from "components/Text/Text";
 import { ReactComponent as MotoDelivery } from "images/motodelivery.svg";
 

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Specials.module.scss";
-import SpecialsCard from "components/Specials/components/SpecialsCard/SpecialsCard";
+import SpecialsCard from "components/Homepage/Specials/components/SpecialsCard/SpecialsCard";
 import GreekSaladImg from "images/greeksalad.jpg";
 import BruschettaImg from "images/bruchetta.png";
 import LemonDessertImg from "images/lemondessert.jpg";
