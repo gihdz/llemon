@@ -12,7 +12,7 @@ type TextColorType =
   | "secondary2"
   | "secondary3"
   | "secondary4";
-type TextFontWeight = "regular" | "medium" | "bold";
+type TextFontWeight = "regular" | "medium" | "bold" | "extraBold";
 interface Props {
   size?: TextSizeType;
   color?: TextColorType;
@@ -32,6 +32,7 @@ const getFontWeightKey = (weight?: TextFontWeight, size?: TextSizeType) => {
     regular: "400",
     medium: "500",
     bold: "700",
+    extraBold: "800",
   };
   return `fontWeight${weight ? weightCssValueMap[weight] : "400"}`;
 };

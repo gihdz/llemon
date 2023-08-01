@@ -1,7 +1,7 @@
 import React from "react";
 import Hero from "components/Hero/Hero";
 import Main from "components/Main";
-// import Footer from "components/Footer";
+import Footer from "components/Footer/Footer";
 import Header from "components/Header/Header";
 import Specials from "components/Specials/Specials";
 import Testimonials from "components/Homepage/Testimonials/Testimonials";
@@ -16,7 +16,7 @@ function App() {
         <Specials />
         <Testimonials />
         <About />
-        {/*<Footer />*/}
+        <Footer />
       </Main>
     </>
   );

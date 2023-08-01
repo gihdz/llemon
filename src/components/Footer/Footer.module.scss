@@ -1,0 +1,25 @@
+@import "styles/variables";
+.container {
+  background-color: $secondary5;
+  padding: 80px 10px;
+}
+
+.content {
+  max-width: 858px;
+  margin: auto;
+  display: flex;
+  gap: 60px;
+}
+
+.columnLinks {
+  padding-top: 30px;
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footerImg {
+  width: 250px;
+  border-radius: 10px;
+}
