@@ -5,6 +5,7 @@ import Main from "components/Main";
 import Header from "components/Header/Header";
 import Specials from "components/Specials/Specials";
 import Testimonials from "components/Homepage/Testimonials/Testimonials";
+import About from "components/Homepage/About/About";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Hero />
         <Specials />
         <Testimonials />
+        <About />
         {/*<Footer />*/}
       </Main>
     </>
