@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Footer.module.scss";
 import RestaurantFoodImg from "images/restauranfood.jpg";
 import Text from "components/Text/Text";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -21,39 +22,33 @@ const Footer = () => {
             </Text>
             <ul>
               <li>
-                <a href="/">
+                <Link to="/">
                   <Text size={20} weight={"medium"}>
                     Home
                   </Text>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/">
-                  <Text size={20} weight={"medium"}>
-                    About
-                  </Text>
-                </a>
+                <Text size={20} weight={"medium"}>
+                  About
+                </Text>
               </li>
               <li>
-                <a href="/">
+                <Link to="/book">
                   <Text size={20} weight={"medium"}>
                     Reservations
                   </Text>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/">
-                  <Text size={20} weight={"medium"}>
-                    Order Online
-                  </Text>
-                </a>
+                <Text size={20} weight={"medium"}>
+                  Order Online
+                </Text>
               </li>
               <li>
-                <a href="/">
-                  <Text size={20} weight={"medium"}>
-                    Login
-                  </Text>
-                </a>
+                <Text size={20} weight={"medium"}>
+                  Login
+                </Text>
               </li>
             </ul>
           </div>

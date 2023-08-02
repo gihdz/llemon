@@ -3,11 +3,34 @@ import ReactDOM from "react-dom/client";
 import "./styles/index.scss";
 import reportWebVitals from "./reportWebVitals";
 import App from "./App";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Homepage from "components/Homepage/Homepage";
+import ErrorPage from "components/Pages/ErrorPage/ErrorPage";
+import BookingPage from "components/Pages/BookingPage/BookingPage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <Homepage />,
+      },
+      {
+        path: "/book",
+        element: <BookingPage />,
+      },
+    ],
+  },
+]);
+
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>,
 );
 
