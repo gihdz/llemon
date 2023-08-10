@@ -1,33 +1,47 @@
-import React from "react";
+import React, { useEffect, useMemo } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import styles from "./BookingForm.module.scss";
 import FormFieldGroup from "components/Pages/BookingPage/BookingForm/FormFieldGroup";
 import Button from "components/Button/Button";
+import { getAvailableTimes } from "api/getAvailableTimes";
 
 type Inputs = {
-  date: string;
-  time: string;
+  date: string | null;
+  time: string | null;
   guests: string;
   occasion: string;
 };
-
-const availableTimes = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
 
 const BookingForm = () => {
   const {
     register,
     handleSubmit,
     watch,
+    setValue,
     formState: { errors },
   } = useForm<Inputs>({
     defaultValues: {
-      date: null,
+      date: "",
       guests: null,
-      time: "20:00",
+      time: "",
       occasion: "birthday",
     },
   });
   const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+
+  const date: string | null = watch("date"); // watch input value by passing the name of it
+
+  const availableTimes: Array<string> = useMemo(() => {
+    if (!date) {
+      return [];
+    }
+
+    return getAvailableTimes(new Date(date));
+  }, [date]);
+
+  useEffect(() => {
+    setValue("time", "");
+  }, [date, setValue]);
 
   const availableTimeOptions = availableTimes.map((time) => {
     return (
@@ -36,11 +50,14 @@ const BookingForm = () => {
       </option>
     );
   });
+
   return (
     <div className={styles.container}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <FormFieldGroup id={"resDate"} label={"Choose date"}>
           <input
+            aria-label="Choose date"
+            role={"dialog"}
             type="date"
             id="resDate"
             className={styles.formField}
@@ -52,8 +69,10 @@ const BookingForm = () => {
           <select
             className={styles.formField}
             {...register("time", { required: "Time is required" })}
-            id="resTime "
+            id="resTime"
+            disabled={!date}
           >
+            <option value=""></option>
             {availableTimeOptions}
           </select>
           {errors.time && <span>{errors.time.message}</span>}
