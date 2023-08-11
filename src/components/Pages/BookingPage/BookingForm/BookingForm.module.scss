@@ -2,6 +2,8 @@
   max-width: 858px;
   margin: auto;
   padding: 80px 0;
+  display: flex;
+  justify-content: center;
 }
 
 .formField {
@@ -9,4 +11,10 @@
   border-radius: 8px;
   padding: 8px 20px;
   margin-bottom: 10px;
+  width: 100%;
+}
+
+.formContainer {
+  max-width: 400px;
+  width: 100%;
 }

@@ -6,11 +6,19 @@ import Text from "components/Text/Text";
 interface Props {
   text: string;
   color?: "primary1" | "primary2";
+  type?: "button" | "submit";
+  disabled?: boolean;
 }
-const Button = ({ text, color }: Props) => {
+const Button = ({ text, color, type, disabled }: Props) => {
   const bgColorStyle = styles[color || "primary2"];
   return (
-    <button type="button" className={classNames(styles.button, bgColorStyle)}>
+    <button
+      type={type || "button"}
+      disabled={disabled}
+      className={classNames(styles.button, bgColorStyle, {
+        [styles.buttonDisabled]: disabled,
+      })}
+    >
       <Text size={16} weight="medium">
         {text}
       </Text>

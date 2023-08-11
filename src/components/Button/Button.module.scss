@@ -1,14 +1,18 @@
 @import "styles/variables";
 .button {
-    padding: 10px 16px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 .primary1 {
-    background-color: $primary1;
+  background-color: $primary1;
 }
 .primary2 {
-    background-color: $primary2;
+  background-color: $primary2;
+}
+
+.buttonDisabled {
+  background-color: $secondary5;
 }

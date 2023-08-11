@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Homepage from "components/Homepage/Homepage";
 import ErrorPage from "components/Pages/ErrorPage/ErrorPage";
 import BookingPage from "components/Pages/BookingPage/BookingPage";
+import ConfirmedBooking from "components/Pages/ConfirmedBooking/ConfirmedBooking";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/book",
         element: <BookingPage />,
+      },
+      {
+        path: "/book-confirmed",
+        element: <ConfirmedBooking />,
       },
     ],
   },
