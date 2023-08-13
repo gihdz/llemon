@@ -3,11 +3,15 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import styles from "./BookingForm.module.scss";
 import FormFieldGroup from "components/Pages/BookingPage/BookingForm/FormFieldGroup";
 import Button from "components/Button/Button";
-import { getAvailableTimes } from "api/getAvailableTimes";
-import createTableReservation from "api/createTableReservation";
+import {
+  getAvailableTimes,
+  createTableReservation,
+} from "api/tableReservation";
 import Text from "components/Text/Text";
 import Box from "components/Box/Box";
 import { useNavigate } from "react-router-dom";
+import classNames from "classnames";
+import useExistingBookingSlots from "hooks/useExistingBookingSlots";
 
 type Inputs = {
   date: string | null;
@@ -32,6 +36,14 @@ const BookingForm = () => {
     },
   });
 
+  const { isLoading, existingBookingSlots } = useExistingBookingSlots();
+
+  const date: string | null = watch("date"); // watch input value by passing the name of it
+
+  useEffect(() => {
+    setValue("time", "");
+  }, [date, setValue]);
+
   const navigate = useNavigate();
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
@@ -44,8 +56,6 @@ const BookingForm = () => {
     navigate("/book-confirmed");
   };
 
-  const date: string | null = watch("date"); // watch input value by passing the name of it
-
   const availableTimes: Array<string> = useMemo(() => {
     if (!date) {
       return [];
@@ -54,13 +64,13 @@ const BookingForm = () => {
     return getAvailableTimes(new Date(date));
   }, [date]);
 
-  useEffect(() => {
-    setValue("time", "");
-  }, [date, setValue]);
-
   const availableTimeOptions = availableTimes.map((time) => {
     return (
-      <option key={time} value={time}>
+      <option
+        disabled={existingBookingSlots.has(`${date}-${time}`)}
+        key={time}
+        value={time}
+      >
         {time}
       </option>
     );
@@ -72,7 +82,10 @@ const BookingForm = () => {
         <Text align={"center"} size={40}>
           Book a table
         </Text>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form
+          className={classNames({ [styles.loadingForm]: isLoading })}
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <FormFieldGroup id={"resDate"} label={"Choose date"}>
             <input
               aria-label="Choose date"
@@ -80,7 +93,16 @@ const BookingForm = () => {
               type="date"
               id="resDate"
               className={styles.formField}
-              {...register("date", { required: "Date is required" })}
+              {...register("date", {
+                required: "Date is required",
+                validate: (value) => {
+                  const dateValue = new Date(value);
+                  return (
+                    (dateValue instanceof Date && !Number.isNaN(dateValue)) ||
+                    "Invalid date"
+                  );
+                },
+              })}
             />
             {errors.date && <span>{errors.date.message}</span>}
           </FormFieldGroup>

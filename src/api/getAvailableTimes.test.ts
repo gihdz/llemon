@@ -1,4 +1,4 @@
-import { getAvailableTimes } from "./getAvailableTimes";
+import { getAvailableTimes } from "./tableReservation";
 
 describe("getAvailableTimes", () => {
   it("should get proper times for a given date", () => {

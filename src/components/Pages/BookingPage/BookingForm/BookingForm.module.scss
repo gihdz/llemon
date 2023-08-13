@@ -1,7 +1,8 @@
+@import "styles/variables";
 .container {
   max-width: 858px;
   margin: auto;
-  padding: 80px 0;
+  padding: 5px 0 80px 0;
   display: flex;
   justify-content: center;
 }
@@ -12,9 +13,24 @@
   padding: 8px 20px;
   margin-bottom: 10px;
   width: 100%;
+  &:disabled {
+    border: 2px solid $secondary5;
+  }
 }
 
 .formContainer {
   max-width: 400px;
   width: 100%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.1;
+  }
+}
+
+.loadingForm {
+  opacity: 0.5;
+  pointer-events: none;
+  animation: fadeIn 1s infinite alternate;
 }
