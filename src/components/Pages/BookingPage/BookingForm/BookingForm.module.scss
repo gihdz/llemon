@@ -11,11 +11,15 @@
   border: 2px solid black;
   border-radius: 8px;
   padding: 8px 20px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   width: 100%;
   &:disabled {
     border: 2px solid $secondary5;
   }
+}
+
+.formFieldError {
+  color: darkred;
 }
 
 .formContainer {

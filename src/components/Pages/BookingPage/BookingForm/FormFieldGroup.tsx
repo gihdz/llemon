@@ -9,14 +9,14 @@ interface Props {
 
 const FormFieldGroup = ({ children, label, id }: PropsWithChildren<Props>) => {
   return (
-    <div>
+    <Box marginBottom={2}>
       <Box marginBottom={1}>
         <label htmlFor={id}>
           <Text size={20}>{label}</Text>
         </label>
       </Box>
       {children}
-    </div>
+    </Box>
   );
 };
 

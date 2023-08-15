@@ -93,6 +93,7 @@ const BookingForm = () => {
               type="date"
               id="resDate"
               className={styles.formField}
+              required
               {...register("date", {
                 required: "Date is required",
                 validate: (value) => {
@@ -104,7 +105,11 @@ const BookingForm = () => {
                 },
               })}
             />
-            {errors.date && <span>{errors.date.message}</span>}
+            {errors.date && (
+              <span className={styles.formFieldError}>
+                {errors.date.message}
+              </span>
+            )}
           </FormFieldGroup>
           <FormFieldGroup id={"resTime"} label={"Choose time"}>
             <select
@@ -112,11 +117,16 @@ const BookingForm = () => {
               {...register("time", { required: "Time is required" })}
               id="resTime"
               disabled={!date}
+              required
             >
               <option value=""></option>
               {availableTimeOptions}
             </select>
-            {errors.time && <span>{errors.time.message}</span>}
+            {errors.time && (
+              <span className={styles.formFieldError}>
+                {errors.time.message}
+              </span>
+            )}
           </FormFieldGroup>
           <FormFieldGroup id={"guests"} label={"Number of guests"}>
             <Box marginBottom={3}>
@@ -128,17 +138,25 @@ const BookingForm = () => {
                 max: { value: 10, message: "10 max guests" },
                 min: { value: 1, message: "1 min guests" },
               })}
+              min={1}
+              max={10}
+              required
               className={styles.formField}
               type="number"
               id="guests"
             />
-            {errors.guests && <span>{errors.guests.message}</span>}
+            {errors.guests && (
+              <span className={styles.formFieldError}>
+                {errors.guests.message}
+              </span>
+            )}
           </FormFieldGroup>
           <FormFieldGroup id={"occasion"} label={"Occasion"}>
             <select
               {...register("occasion", { required: "Occasion is required" })}
               className={styles.formField}
               id="occasion"
+              required
             >
               <option value={"birthday"}>Birthday</option>
               <option value={"anniversary"}>Anniversary</option>
