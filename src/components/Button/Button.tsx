@@ -8,8 +8,9 @@ interface Props {
   color?: "primary1" | "primary2";
   type?: "button" | "submit";
   disabled?: boolean;
+  onClick?: () => void;
 }
-const Button = ({ text, color, type, disabled }: Props) => {
+const Button = ({ text, color, type, disabled, onClick }: Props) => {
   const bgColorStyle = styles[color || "primary2"];
   return (
     <button
@@ -18,6 +19,7 @@ const Button = ({ text, color, type, disabled }: Props) => {
       className={classNames(styles.button, bgColorStyle, {
         [styles.buttonDisabled]: disabled,
       })}
+      onClick={onClick}
     >
       <Text size={16} weight="medium">
         {text}
