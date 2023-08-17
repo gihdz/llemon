@@ -7,7 +7,7 @@ import RestaurantChef from "images/restaurantchef.jpg";
 
 const About = () => {
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <div className={styles.content}>
         <Box marginBottom={8}>
           <Box>
@@ -29,7 +29,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

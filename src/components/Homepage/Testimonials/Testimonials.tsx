@@ -6,7 +6,7 @@ import Box from "components/Box/Box";
 
 const Testimonials = () => {
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <Box marginBottom={12}>
         <Text align="center" size={36} weight="bold">
           Testimonials
@@ -18,7 +18,7 @@ const Testimonials = () => {
         <TestimonialCard />
         <TestimonialCard />
       </div>
-    </div>
+    </section>
   );
 };
 

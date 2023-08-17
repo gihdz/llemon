@@ -6,7 +6,7 @@ import Text from "components/Text/Text";
 
 const HomepageHero = () => {
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <div className={styles.content}>
         <Text size={64} color="primary2">
           Little Lemon
@@ -27,7 +27,7 @@ const HomepageHero = () => {
           src={RestaurantFoodImg}
         />
       </div>
-    </div>
+    </section>
   );
 };
 

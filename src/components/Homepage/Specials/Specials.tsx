@@ -48,7 +48,7 @@ const Specials = () => {
     ),
   );
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <div className={styles.ctaContainer}>
         <Text size={64}>This weeks specials!</Text>
         <div>
@@ -56,7 +56,7 @@ const Specials = () => {
         </div>
       </div>
       <div className={styles.cardsContainer}>{specialsCards}</div>
-    </div>
+    </section>
   );
 };
 

@@ -53,6 +53,7 @@ export const fetchReservations = async (): Promise<TableReservation[]> => {
     const response = await mockAsyncCall({
       success: true,
       data: { code: 200, data: reservations },
+      timeout: 100,
     });
     return response.data;
   } catch (e) {

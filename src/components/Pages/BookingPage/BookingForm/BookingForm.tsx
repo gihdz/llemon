@@ -77,7 +77,7 @@ const BookingForm = () => {
   });
 
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <div className={styles.formContainer}>
         <Text align={"center"} size={40}>
           Book a table
@@ -169,7 +169,7 @@ const BookingForm = () => {
           />
         </form>
       </div>
-    </div>
+    </section>
   );
 };
 
