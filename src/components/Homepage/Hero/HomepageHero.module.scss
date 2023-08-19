@@ -2,6 +2,7 @@
 .container {
   background-color: $primary1;
   margin-bottom: 110px;
+  padding: 0 20px;
 }
 .content {
   position: relative;
@@ -22,7 +23,17 @@
   position: absolute;
   border-radius: 10px;
   top: 20px;
-  right: -10px;
+  right: 0;
   object-fit: cover;
   object-position: 50% 55%;
+}
+@media only screen and (max-width: 780px) {
+  .heroImg {
+    max-width: 250px;
+  }
+}
+@media only screen and (max-width: 680px) {
+  .heroImg {
+    display: none;
+  }
 }

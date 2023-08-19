@@ -31,3 +31,24 @@
     bottom: 0;
   }
 }
+
+@media only screen and (max-width: 780px) {
+  .aboutDescription {
+    display: flex;
+    flex-direction: column;
+    max-width: none;
+    justify-content: center;
+  }
+
+  .imagesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+    & > img {
+      position: static;
+      width: 100%;
+    }
+  }
+}

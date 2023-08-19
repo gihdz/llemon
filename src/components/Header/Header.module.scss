@@ -1,11 +1,22 @@
 .container {
-  display: flex;
   width: 100%;
-  margin:auto;
+  margin: auto;
+}
+
+.headerContent {
+  display: flex;
   justify-content: center;
   align-items: center;
   gap: 22px;
-  height: 100px;
+  padding: 20px;
+}
+
+.logoContainer {
+  display: flex;
+}
+
+.navContainer {
+  position: relative;
 }
 
 .navLinksContainer {
@@ -17,3 +28,77 @@
   }
 }
 
+.closeButtonContainer {
+  display: flex;
+  justify-content: end;
+  padding: 20px;
+  & button {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+
+    &:hover {
+      opacity: 1;
+    }
+    &:before,
+    &:after {
+      position: absolute;
+      left: 15px;
+      content: " ";
+      height: 33px;
+      width: 2px;
+      background-color: #333;
+    }
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.mobileMenuLinksContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: white;
+  z-index: 99;
+  & ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+}
+
+.cleanSlateButton {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 780px) {
+  .mobileNavContainer {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .headerContent {
+    padding: 20px;
+    gap: 0;
+    justify-content: space-between;
+  }
+  .navLinksContainer {
+    display: none;
+  }
+}
